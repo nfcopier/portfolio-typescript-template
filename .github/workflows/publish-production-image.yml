@@ -9,10 +9,14 @@ jobs:
   push-release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
-      - name: Publish to Registry
+
+      - name: Checkout Main
+        uses: actions/checkout@main
+
+      - name: Publish Image
         uses: elgohr/Publish-Docker-Github-Action@v4
         with:
+          registry: ghcr.io
           name: nfcopier/{{<PROJECT_NAME>}}
           username: ${{secrets.DOCKER_USERNAME}}
           password: ${{secrets.DOCKER_PASSWORD}}
