@@ -1,0 +1,17 @@
+name: Replace Template Variables
+
+on:
+  push:
+    branches: "main"
+    tags: "infrastructure-change"
+
+jobs:
+  replace-template-variables:
+
+    - name: Checkout Main
+      uses: actions/checkout@v2
+
+    - name: Replace Variables
+      uses: actions/github-script@v6
+      with:
+        script: console.log("Hello world!");

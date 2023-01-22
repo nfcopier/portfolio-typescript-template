@@ -17,6 +17,6 @@ jobs:
         with:
           registry: ghcr.io
           name: nfcopier/{{<PROJECT_NAME>}}
-          username: ${{secrets.HARBOR_GITHUB_USERNAME}}
-          password: ${{secrets.HARBOR_GITHUB_PASSWORD}}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
           tags: beta-${{github.run_number}}
