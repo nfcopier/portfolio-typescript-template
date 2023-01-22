@@ -5,13 +5,17 @@ on:
     branches: ["main"]
 
 jobs:
-  push-release:
+  publish-beta-image:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
-      - name: Publish to Registry
+
+      - name: Checkout Main
+        uses: actions/checkout@main
+
+      - name: Publish Image
         uses: elgohr/Publish-Docker-Github-Action@v4
         with:
+          registry: ghcr.io
           name: nfcopier/{{<PROJECT_NAME>}}
           username: ${{secrets.HARBOR_GITHUB_USERNAME}}
           password: ${{secrets.HARBOR_GITHUB_PASSWORD}}
