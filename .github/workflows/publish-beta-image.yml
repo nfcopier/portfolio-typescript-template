@@ -1,11 +1,12 @@
 name: Publish Beta Image
 
 on:
-  push:
-    branches: ["main"]
+  pull_request:
+    types: "closed"
 
 jobs:
   publish-beta-image:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
 
