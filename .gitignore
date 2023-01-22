@@ -1,0 +1,5 @@
+node_modeuls/
+.idea/
+dist/
+**/*.js
+**/*.js.map
