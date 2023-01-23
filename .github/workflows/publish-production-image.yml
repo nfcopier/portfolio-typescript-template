@@ -17,7 +17,7 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@v4
         with:
           registry: ghcr.io
-          name: {{<PROJECT_NAME>}}
+          name: {{<PROJECT_OWNER>}}/{{<PROJECT_NAME>}}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           tag_names: true

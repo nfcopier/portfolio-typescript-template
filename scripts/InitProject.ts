@@ -33,10 +33,13 @@ async function* flatten(pathlike: string, fileLike: string): AsyncIterable<strin
 
 const getVariableValues = async () => {
     const urlConfig = await git.getConfig("remote.origin.url");
-    const projectName = urlConfig.value.split("/").pop().slice(0, -4);
+    const projectParts = urlConfig.value.split("/");
+    const projectName = projectParts.pop().slice(0, -4);
+    const projectOwner = projectParts.pop();
     const nameConfig = await git.getConfig("user.name");
     return {
         "PROJECT_NAME": projectName,
+        "PROJECT_OWNER": projectOwner,
         "COPYRIGHT_OWNER": nameConfig.value
     };
 };
