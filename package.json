@@ -8,11 +8,11 @@
     "start": "node ."
   },
   "dependencies": {
-    "@types/node": "^18.11.18"
+    "@types/node": "^18.11.18",
+    "simple-git": "^3.16.0"
   },
   "devDependencies": {
     "typescript": "^4.9.4",
-    "ts-node": "^10.9.1",
-    "simple-git": "^3.16.0"
+    "ts-node": "^10.9.1"
   }
 }
