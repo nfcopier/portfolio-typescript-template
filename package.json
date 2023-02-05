@@ -13,6 +13,9 @@
   },
   "devDependencies": {
     "typescript": "^4.9.4",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "constructs": "^10.1.241",
+    "cdk8s": "^2.6.40",
+    "cdk8s-plus-24": "^2.4.12"
   }
 }
