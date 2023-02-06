@@ -16,7 +16,7 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           registry: ghcr.io
-          name: nfcopier/portfolio-web-ui
+          name: {{<PROJECT_OWNER>}}/{{<PROJECT_NAME>}}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           tags: beta-${{github.run_number}}
